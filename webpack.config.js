@@ -18,73 +18,82 @@ console.log("********************************************");
 console.log(" - Entry matches: " + entries.length);
 console.log(" - Selected entry point is: " + mainEntry);
 module.exports = (env, argv) => {
-    const MODE = argv.mode || 'development';
-    const DEVELOPMENT_MODE = (MODE === 'development');
+  const MODE = argv.mode || 'development';
+  const DEVELOPMENT_MODE = (MODE === 'development');
 
-    const webpackConfig = {
-        devtool: DEVELOPMENT_MODE ? 'eval-source-map' : undefined,  /* (3) This line is important with LuciadRIA */
-        devServer: {
-            inline: true,
-            port: 3000,
-            open: true,
-            overlay: {
-                warnings: false,
-                errors: true
-            }
+  const webpackConfig = {
+    devtool: DEVELOPMENT_MODE ? 'eval-source-map' : undefined,  /* (3) This line is important with LuciadRIA */
+    devServer: {
+      inline: true,
+      port: 3000,
+      open: true,
+      overlay: {
+        warnings: false,
+        errors: true
+      }
+    },
+    entry: ['babel-polyfill', './src/license/index.js', mainEntry],  /* (2) This line is important with LuciadRIA */
+    output: {
+      path: path.join(__dirname, '/dist'),
+      filename: 'index.js',
+    },
+    resolve: {
+      extensions: ['*', '.js', '.jsx']
+    },
+    module: {
+      rules: [
+        {
+          test: /\.(js|jsx)$/,
+          enforce: 'pre',
+          exclude: /node_modules/,
+          include: /src/,               /* (1) This line is important with LuciadRIA */
+          loader: 'eslint-loader',
+          options: {
+            fix: true
+          }
         },
-        entry: ['babel-polyfill', './src/license/index.js', mainEntry],  /* (2) This line is important with LuciadRIA */
-        output: {
-            path: path.join(__dirname, '/dist'),
-            filename: 'index.js',
-        },
-        resolve: {
-            extensions: ['*', '.js', '.jsx']
-        },
-        module: {
-            rules: [
-                {
-                    test: /\.(js|jsx)$/,
-                    enforce: 'pre',
-                    exclude: /node_modules/,
-                    include: /src/,               /* (1) This line is important with LuciadRIA */
-                    loader: ['babel-loader','eslint-loader']
+        {
+          test: /\.(js|jsx)$/,
+          exclude: /node_modules/,
+          include: /src/,               /* (1) This line is important with LuciadRIA */
+          loader: 'babel-loader'
 
-                },
-                {
-                    test: /\.(css|scss|sass)$/,
-                    loader: [
-                        DEVELOPMENT_MODE ? 'style-loader' : MiniCssExtractPlugin.loader,
-                        'css-loader',
-                        'sass-loader'
-                    ],
-                },
-                {
-                    test: /\.(eot|svg|ttf|woff|woff2|png|jpg)$/,
-                    use: ['file-loader'],
-                },
-            ]
         },
-        plugins: [
-            ...(!DEVELOPMENT_MODE ? [new MiniCssExtractPlugin({filename: "index.css"})] : []),
-            new CopyWebpackPlugin([
-                {
-                    from: 'public',
-                    ignore: ['index.html']
-                }
-            ]),
-            new HtmlWebpackPlugin({
-                template: './public/index.html',
-            }),
-        ]
-    };
+        {
+          test: /\.(css|scss|sass)$/,
+          loader: [
+            DEVELOPMENT_MODE ? 'style-loader' : MiniCssExtractPlugin.loader,
+            'css-loader',
+            'sass-loader'
+          ],
+        },
+        {
+          test: /\.(eot|svg|ttf|woff|woff2|png|jpg)$/,
+          use: ['file-loader'],
+        },
+      ]
+    },
+    plugins: [
+      ...(!DEVELOPMENT_MODE ? [new MiniCssExtractPlugin({filename: "index.css"})] : []),
+      new CopyWebpackPlugin([
+        {
+          from: 'public',
+          ignore: ['index.html']
+        }
+      ]),
+      new HtmlWebpackPlugin({
+        template: './public/index.html',
+      }),
+    ]
+  };
 
-    if (DEVELOPMENT_MODE) {
-        console.log(" - Webpack server starting in development mode!");
-    } else {
-        console.log(" - Webpack in production mode! This may take several minutes, be patient.");
-    }
-    console.log("********************************************");
+  if (DEVELOPMENT_MODE) {
+    console.log(" - Webpack server starting in development mode!");
+  } else {
+    console.log(" - Webpack in production mode! This may take several minutes, be patient.");
+  }
+  console.log("********************************************");
 
-    return webpackConfig;
+  return webpackConfig;
 }
 
