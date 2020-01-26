@@ -1,17 +1,17 @@
 {
-  "name": "luciad2020",
+  "name": "luciadria2020",
   "version": "1.0.0",
   "description": "A  Webpack environment intyegrated with LuciadRIA 2020.0  eslint, airbnb, prettier and vscode",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node --max-old-space-size=8192 ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline",
     "build": "node --max-old-space-size=8192 ./node_modules/webpack/bin/webpack.js --mode production",
-    "lint": "node_modules/.bin/eslint --fix  src/**/*.js?",
+    "lint": "node_modules/.bin/eslint --fix  src/**/*.js*",
     "serve": "serve ./dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luciaddevelopmentplatform/luciad2020"
+    "url": "git+https://github.com/luciaddevelopmentplatform/luciadria2020"
   },
   "keywords": [],
   "author": "",
