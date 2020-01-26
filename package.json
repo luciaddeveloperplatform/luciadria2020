@@ -1,0 +1,55 @@
+{
+  "name": "luciad2020",
+  "version": "1.0.0",
+  "description": "A  Webpack environment intyegrated with LuciadRIA 2020.0  eslint, airbnb, prettier and vscode",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --max-old-space-size=8192 ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline",
+    "build": "node --max-old-space-size=8192 ./node_modules/webpack/bin/webpack.js --mode production",
+    "lint": "node_modules/.bin/eslint --fix  src/**/*.js?",
+    "serve": "serve ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luciaddevelopmentplatform/luciad2020"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.2",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "file-loader": "^5.0.2",
+    "glob": "latest",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "prettier": "^1.19.1",
+    "raw-loader": "^4.0.0",
+    "sass-loader": "^8.0.2",
+    "serve": "^11.3.0",
+    "style-loader": "^1.1.3",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "dependencies": {
+    "@luciad/ria": "file:../../luciad/LuciadRIA_2020.0.05b/packages/es6/ria",
+    "babel-polyfill": "^6.26.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}

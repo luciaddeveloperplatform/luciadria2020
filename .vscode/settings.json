@@ -1,0 +1,10 @@
+{
+  "editor.formatOnSave": false,
+  "prettier.eslintIntegration": false,
+  "eslint.autoFixOnSave": true,
+  "git.ignoreLimitWarning": true,
+  "javascript.validate.enable": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
