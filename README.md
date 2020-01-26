@@ -16,7 +16,7 @@ Linting capabilities and editor integration are included
 Simply download or clone this project from Github.   
 NOTE: If you have instaleld the git commandline your can type:
 ```
-git clone https://github.com/luciaddevelopmentplatform/luciad2020.git
+git clone https://github.com/luciaddevelopmentplatform/luciadria2020.git
 ```
 Change directory to the location of the repository and install your npm dependencies.
 
