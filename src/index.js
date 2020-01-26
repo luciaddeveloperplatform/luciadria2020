@@ -22,8 +22,3 @@ const map = new WebGLMap(mapElement, { reference: getReference("EPSG:4978") });
 map.mapNavigator.fit({
   bounds: createBounds(getReference("CRS:84"), [-122, 60, 25, 30])
 });
-
-// Create an html element to hold the layer control
-const layerControlElement = document.createElement("div");
-layerControlElement.id = "layer-control-id";
-mapElement.appendChild(layerControlElement);
