@@ -36,7 +36,7 @@ npm install --save C:\luciad\LuciadRIA_2020.0.01\packages\es6\symbology
 
 ### Add LuciadMap controls from Github (optional)
 ```
-npm install https://github.com/luciaddevelopmentplatform/luciadmapcontrols/tarball/master
+npm install --save https://github.com/luciaddevelopmentplatform/luciadmapcontrols/tarball/master
 ```
 
 For more info look about using the luciadmapcontrols package look at: 
