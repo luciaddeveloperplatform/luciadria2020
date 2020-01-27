@@ -47,7 +47,6 @@
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
-    "@luciad/ria": "file:../../luciad/LuciadRIA_2020.0.05b/packages/es6/ria",
     "babel-polyfill": "^6.26.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
