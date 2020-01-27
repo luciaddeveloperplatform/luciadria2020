@@ -20,21 +20,22 @@ git clone https://github.com/luciaddevelopmentplatform/luciadria2020.git
 ```
 Change directory to the location of the repository and install your npm dependencies.
 
-## To setup the LuciadRIA API  type
+## Install the LuciadRIA API  
+The LuciadRIA api includes a core package and optional packages. To install a package use npm:
 ```
 npm install --save file_path_to_your_luciadria_package
 ```
-### For the LuciadRIA core package (NOTE: Addap the path to your local LuciadRIA folder)
+### For the LuciadRIA core package (NOTE: Addapt the LuciadRIA path accorgingly to your setup)
 ```
 npm install --save C:\luciad\LuciadRIA_2020.0.01\packages\es6\ria
 ```
-### LuciadRIA Optional packages (NOTE: Addap the path to your local LuciadRIA folder)
+### LuciadRIA Optional packages (NOTE: Addapt the LuciadRIA path accorgingly to your setup)
 ```
 npm install --save C:\luciad\LuciadRIA_2020.0.01\packages\es6\geometry
 npm install --save C:\luciad\LuciadRIA_2020.0.01\packages\es6\symbology
 ```
 
-### Add LuciadMap controls from Github (optional)
+## Add LuciadMap controls from Github (optional)
 ```
 npm install --save https://github.com/luciaddevelopmentplatform/luciadmapcontrols/tarball/master
 ```
