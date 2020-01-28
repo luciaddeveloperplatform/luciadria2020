@@ -62,8 +62,7 @@ Make sure your license file is called 'luciadria_development.txt'
 - Linting with ESLint & Prettier with editor integration (vscode | intellij)
 - Bundle code for production
 - Test server for production 
-- This environment can be used as starting point for web applications or libraries
-- CSS/SCSS code is split from the final JS bundle for production
+- CSS/SCSS code is split from the final JS bundle (for production only)
 - Static files are served as files (not bundled)
 - Integrated with LuciadRIA 2020
 - It shows an empty 3D map
